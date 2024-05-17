@@ -4,7 +4,7 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
   environment {
-    DOCKERHUB_CREDENTIALS = credentials('abi-dockerhub')
+    DOCKERHUB_CREDENTIALS = credentials('aliyoubinate-dockerhub')
   }
   stages {
     stage('Build') {
