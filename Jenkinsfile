@@ -9,7 +9,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t alibinapi/abi-alpine:latest .'
+        sh 'docker build -t abi-alpine .'
+      }
+    }
+  stage('tag image') {
+      steps {
+        sh 'docker tag abi-alpine alinbinapi/abi-alpine .'
       }
     }
     stage('Login') {
@@ -19,7 +24,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push alibinapi/abi-alpine:latest:latest'
+        sh 'docker push alibinapi/abi-alpine'
       }
     }
   }
