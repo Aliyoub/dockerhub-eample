@@ -14,7 +14,7 @@ pipeline {
     }
   stage('tag image') {
       steps {
-        sh 'docker tag abi-alpine alinbinapi/abi-alpine .'
+        sh 'docker tag abi-alpine alinbinapi/abi-alpine'
       }
     }
     stage('Login') {
